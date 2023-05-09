@@ -8,6 +8,8 @@ object Dependencies {
     "com.typesafe"         % "config"                  % "1.3.2"   % Test,
     "com.typesafe.play"   %% "play-ahc-ws-standalone"  % "2.1.2"   % Test,
     "org.slf4j"            % "slf4j-simple"            % "1.7.25"  % Test,
-    "com.typesafe.play"   %% "play-ws-standalone-json" % "2.1.2"   % Test
+    "com.typesafe.play"   %% "play-ws-standalone-json" % "2.1.2"   % Test,
+    "org.scalatest"       %% "scalatest"               % "3.2.9"   % Test,
+    "org.scalaj"          %% "scalaj-http"             % "2.4.2"   % Test
   )
 }
