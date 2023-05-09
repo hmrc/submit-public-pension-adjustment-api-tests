@@ -17,9 +17,8 @@
 package uk.gov.hmrc.test.api.models
 
 import play.api.libs.json.{Json, OFormat}
-
-case class IndividualsLinks(name: String, href: String, title: String)
-
-object IndividualsLinks {
-  implicit val userJsonFormat: OFormat[IndividualsLinks] = Json.format[IndividualsLinks]
+case class SubmitPublicPensionAdjustmentResponse(submissionReference: String)
+object SubmitPublicPensionAdjustmentResponse {
+  implicit val submitPublicPensionAdjustmentResponsePayload: OFormat[SubmitPublicPensionAdjustmentResponse] =
+    Json.format[SubmitPublicPensionAdjustmentResponse]
 }

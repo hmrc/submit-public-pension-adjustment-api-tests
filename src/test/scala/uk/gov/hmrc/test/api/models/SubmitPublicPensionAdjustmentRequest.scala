@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.api.specs
+package uk.gov.hmrc.test.api.models
 
-import org.scalatest._
-import org.scalatest.concurrent.Eventually
-import org.scalatest.featurespec.AnyFeatureSpec
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.api.helpers.{AuthHelper, SubmitPublicPensionAdjustmentHelper}
+import play.api.libs.json.{Json, OFormat}
+case class SubmitPublicPensionAdjustmentRequest(dataItem1: String)
 
-trait BaseSpec extends AnyFeatureSpec with GivenWhenThen with BeforeAndAfterAll with Matchers with Eventually {
-  val authHelper                = new AuthHelper
-  val individualsMatchingHelper = new SubmitPublicPensionAdjustmentHelper
+object SubmitPublicPensionAdjustmentRequest {
+  implicit val submitPublicPensionAdjustmentRequestPayload: OFormat[SubmitPublicPensionAdjustmentRequest] =
+    Json.format[SubmitPublicPensionAdjustmentRequest]
 }

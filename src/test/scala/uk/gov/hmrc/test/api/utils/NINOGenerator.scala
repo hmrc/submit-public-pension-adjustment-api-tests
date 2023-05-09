@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.api.models
+package uk.gov.hmrc.test.api.utils
 
-import play.api.libs.json.{Json, OFormat}
+import scala.util.Random
 
-case class User(firstName: String, lastName: String, nino: String, dateOfBirth: String)
-
-object User {
-  implicit val userJsonFormat: OFormat[User] = Json.format[User]
-  val ninoUser: User                         = User("Luke", "Wood", "EG724113D", "1960-04-06")
+object NINOGenerator {
+  val nino = {
+    val firstTwoLetters = "ABCEGHJKLMNPRSTWXYZ"
+    val letterPart      = Random.shuffle(firstTwoLetters.toList).take(2).mkString
+    val numberPart      = Random.nextInt(999999).toString.reverse.padTo(6, '0').reverse
+    val lastLetters     = "ABCD"
+    val lastLetterPart  = Random.shuffle(lastLetters.toList).take(1).mkString
+    s"$letterPart$numberPart$lastLetterPart"
+  }
 }
