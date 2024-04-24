@@ -21,25 +21,26 @@ import uk.gov.hmrc.test.api.models.{SubmitPublicPensionAdjustmentRequest, Submit
 import uk.gov.hmrc.test.api.utils.ApiLogger
 
 class SubmitPublicPensionAdjustmentSpec extends BaseSpec {
-  val uri = "submit-public-pension-adjustment/calculation/submit"
+  val uri = "submit-public-pension-adjustment/final-submission"
   Feature("Submit Public Pension Adjustment API functionality") {
 
     Scenario("Verify submit public pension adjustment API response") {
 
       Given("I got a valid bearer token")
-      val authBearerToken: String                           = authHelper.getAuthBearerToken
-      val requestJson: SubmitPublicPensionAdjustmentRequest =
-        SubmitPublicPensionAdjustmentRequest(dataItem1 = "theDataItem")
+      val authBearerToken: String = authHelper.getAuthBearerToken
+      val submissionJson          = getClass.getResourceAsStream("/finalSubmission.json")
+      val finalSubmissionPayload  = scala.io.Source.fromInputStream(submissionJson).mkString
 
       When("I use the submit public pension adjustment API request to get a valid response")
-      val response: StandaloneWSResponse = individualsMatchingHelper.postRequest(uri, requestJson, authBearerToken)
+      val response: StandaloneWSResponse =
+        individualsMatchingHelper.postRequest(uri, finalSubmissionPayload, authBearerToken)
 
       Then("I got the status code 200")
       response.status shouldBe 200
 
       Then("I got the response body parameter - submissionReference")
       val responseBody: SubmitPublicPensionAdjustmentResponse = individualsMatchingHelper.readResponse(response.body)
-      ApiLogger.log.info("submissionReference value : " + responseBody.submissionReference)
+      ApiLogger.log.info("submissionReference value : " + responseBody.userSubmissionReference)
     }
   }
 }
