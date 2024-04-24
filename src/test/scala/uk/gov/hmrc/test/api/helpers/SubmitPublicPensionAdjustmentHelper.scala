@@ -27,7 +27,6 @@ class SubmitPublicPensionAdjustmentHelper {
   def postRequest(uri: String, json: String, token: String): StandaloneWSResponse = {
     val individualsMatchGetResponse: StandaloneWSRequest#Self#Response =
       individualsMatchingServiceAPI.postRequest(uri, json, token)
-    println("££££3333££££££ : " + json)
     individualsMatchGetResponse
   }
 
