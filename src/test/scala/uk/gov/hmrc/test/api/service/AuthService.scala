@@ -31,7 +31,7 @@ class AuthService extends HttpClient {
   val credId              = "a-cred-id-" + UUID.randomUUID().toString
   val authPayload: String = "{\n  \"credId\":\"" + credId + "\"," +
     "\n  \"affinityGroup\": \"Individual\"," +
-    "\n  \"confidenceLevel\": 50," +
+    "\n  \"confidenceLevel\": 250," +
     "\n  \"credentialStrength\": \"strong\"," +
     "\n  \"credentialRole\": \"User\"," +
     "\n  \"enrolments\": [\n  ]," +

@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.api.service.SubmitPublicPensionAdjustmentService
 class SubmitPublicPensionAdjustmentHelper {
   val individualsMatchingServiceAPI: SubmitPublicPensionAdjustmentService = new SubmitPublicPensionAdjustmentService
 
-  def postRequest(uri: String, json: SubmitPublicPensionAdjustmentRequest, token: String): StandaloneWSResponse = {
+  def postRequest(uri: String, json: String, token: String): StandaloneWSResponse = {
     val individualsMatchGetResponse: StandaloneWSRequest#Self#Response =
       individualsMatchingServiceAPI.postRequest(uri, json, token)
     individualsMatchGetResponse

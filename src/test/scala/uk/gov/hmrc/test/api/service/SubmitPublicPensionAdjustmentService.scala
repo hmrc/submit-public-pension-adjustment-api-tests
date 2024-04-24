@@ -31,14 +31,13 @@ class SubmitPublicPensionAdjustmentService extends HttpClient {
 
   def postRequest(
     uri: String,
-    individual: SubmitPublicPensionAdjustmentRequest,
+    payload: String,
     token: String
-  ): StandaloneWSRequest#Self#Response = {
-    val individualPayload = Json.toJsObject(individual)
+  ): StandaloneWSRequest#Self#Response =
     Await.result(
       post(
         individualsMatchingURL + uri,
-        Json.stringify(individualPayload),
+        payload,
         ("Content-Type", "application/json"),
         ("Authorization", token),
         ("CorrelationId", "12345678"),
@@ -46,5 +45,4 @@ class SubmitPublicPensionAdjustmentService extends HttpClient {
       ),
       10.seconds
     )
-  }
 }
