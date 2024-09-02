@@ -4,6 +4,15 @@
       "isResubmission" : true,
       "reason" : "Some(Change in amounts)"
     },
+    "setup" : {
+      "annualAllowanceSetup" : {
+        "savingsStatement" : true
+      },
+      "lifetimeAllowanceSetup" : {
+        "benefitCrystallisationEventFlag" : true,
+        "changeInLifetimeAllowancePercentageInformedFlag" : true
+      }
+    },
     "annualAllowance" : {
       "scottishTaxYears" : [ ],
       "taxYears" : [ {
@@ -160,16 +169,13 @@
       } ]
     },
     "lifeTimeAllowance" : {
-      "benefitCrystallisationEventFlag" : true,
       "benefitCrystallisationEventDate" : "2017-06-25",
-      "changeInLifetimeAllowancePercentageInformedFlag" : true,
       "changeInTaxCharge" : "newCharge",
       "lifetimeAllowanceProtectionOrEnhancements" : "enhancements",
       "protectionTypeEnhancementChanged" : "no",
       "previousLifetimeAllowanceChargeFlag" : false,
       "newLifetimeAllowanceChargeWillBePaidBy" : "you",
       "newLifeTimeAllowanceAdditions" : {
-        "multipleBenefitCrystallisationEventFlag" : false,
         "enhancementType" : "both",
         "internationalEnhancementReference" : "1234567890ASDFG",
         "pensionCreditReference" : "1234567890ZXCVB",
@@ -299,7 +305,7 @@
           "contactPhoneNumber" : "+44 808 157 0192"
         },
         "taxIdentifiers" : {
-          "nino" : "YT267745A",
+          "nino" : "MP304364A",
           "utr" : "123456789"
         }
       },
@@ -318,10 +324,10 @@
           "contactPhoneNumber" : "+44 808 157 0192"
         },
         "taxIdentifiers" : {
-          "nino" : "HR227277B",
+          "nino" : "KR155727A",
           "utr" : "1234567891"
         },
-        "dateOfDeath" : "2022-07-18",
+        "dateOfDeath" : "2022-09-02",
         "memberType" : "Deceased"
       }
     },
