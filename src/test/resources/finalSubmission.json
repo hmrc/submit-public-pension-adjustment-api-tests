@@ -324,7 +324,7 @@
       "chargePaidByMember" : 1200,
       "chargePaidBySchemes" : 0,
       "revisedChargableAmountBeforeTaxRate" : 283000,
-      "revisedChargableAmountAfterTaxRate" : 122850,
+      "revisedChargableAmountAfterTaxRate" : 122643,
       "unusedAnnualAllowance" : 0,
       "taxYearSchemes" : [ {
         "name" : "Scheme 1",
@@ -468,7 +468,7 @@
           "contactPhoneNumber" : "07791111111"
         },
         "taxIdentifiers" : {
-          "nino" : "RK936984D",
+          "nino" : "YK914150C",
           "utr" : "123456789"
         }
       },
@@ -487,19 +487,46 @@
           "contactPhoneNumber" : "07791111111"
         },
         "taxIdentifiers" : {
-          "nino" : "LH753025D",
+          "nino" : "BK738825B",
           "utr" : "1234567891"
         },
-        "dateOfDeath" : "2022-09-12",
+        "dateOfDeath" : "2022-09-26",
         "memberType" : "Deceased"
       }
     },
     "paymentElections" : [ {
-      "period" : "2020"
+      "period" : "2020",
+      "schemeCharge" : {
+        "amount" : 12700,
+        "schemeDetails" : {
+          "schemeName" : "Scheme 1",
+          "pstr" : {
+            "value" : "00348916RU"
+          }
+        }
+      }
     }, {
-      "period" : "2022"
+      "period" : "2022",
+      "schemeCharge" : {
+        "amount" : 15400,
+        "schemeDetails" : {
+          "schemeName" : "Scheme 1",
+          "pstr" : {
+            "value" : "00348916RU"
+          }
+        }
+      }
     }, {
-      "period" : "2023"
+      "period" : "2023",
+      "schemeCharge" : {
+        "amount" : 15400,
+        "schemeDetails" : {
+          "schemeName" : "Scheme 1",
+          "pstr" : {
+            "value" : "00348916RU"
+          }
+        }
+      }
     } ],
     "calculationInputSchemeIdentifiers" : [ {
       "relatedToScheme" : {
